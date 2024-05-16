@@ -2,6 +2,17 @@ import { themes } from "../mock/themes.js";
 
 const defaultTheme = themes.find((theme) => theme.id === 1);
 
+const userThemes = loadUserThemesFromLocalStorage() || themes;
+
+function saveUserThemesToLocalStorage() {
+  localStorage.setItem("themes", JSON.stringify(userThemes));
+}
+
+function loadUserThemesFromLocalStorage() {
+  const savedThemes = localStorage.getItem("themes");
+  return savedThemes ? JSON.parse(savedThemes) : null;
+}
+
 const headerPage = document.querySelector("#header-page");
 headerPage.style.backgroundColor = defaultTheme.colors.primary;
 
@@ -78,7 +89,7 @@ export function renderThemeList() {
 
   themeListElement.innerHTML = "";
 
-  themes.forEach((theme) => {
+  userThemes.forEach((theme) => {
     const themeItem = renderThemeItem(theme);
     themeListElement.appendChild(themeItem);
   });
@@ -106,7 +117,7 @@ function addNewTheme(event) {
     },
   };
 
-  themes.push(newTheme);
+  userThemes.push(newTheme);
 
   document.querySelector("#theme-name-input").value = "";
   document.getElementById("primary-color-input").value =
@@ -121,5 +132,7 @@ function addNewTheme(event) {
     defaultTheme.colors.warning;
 
   renderThemeList();
-  console.log(themes);
+  saveUserThemesToLocalStorage();
+
+  console.log(userThemes);
 }
