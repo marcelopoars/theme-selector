@@ -89,7 +89,6 @@ h2 {
 #new-theme-form label {
   border: none;
   cursor: pointer;
-  
 }
 
 #new-theme-form .form-control.color input {
@@ -119,4 +118,15 @@ h2 {
 
 #new-theme-form #new-theme-form-button {
   width: 100%;
+}
+
+.colorSquare {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+}
+
+.colorSquare + .colorSquare {
+  margin-left: 1rem;
 }

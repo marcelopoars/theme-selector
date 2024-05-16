@@ -1,26 +1,39 @@
 import { themes } from "../mock/themes.js";
 
-const defaultTheme =  themes.find(theme => theme.id === 1)
+const defaultTheme = themes.find((theme) => theme.id === 1);
 
-const headerPage = document.querySelector('#header-page')
-headerPage.style.backgroundColor = defaultTheme.colors.primary
+const headerPage = document.querySelector("#header-page");
+headerPage.style.backgroundColor = defaultTheme.colors.primary;
 
-document.querySelector("#new-theme-form").addEventListener("submit", addNewTheme);
+document
+  .querySelector("#new-theme-form")
+  .addEventListener("submit", addNewTheme);
 
-document.querySelector('#primary-color-input').value = defaultTheme.colors.primary
-document.querySelector('#secondary-color-input').value = defaultTheme.colors.secondary
-document.querySelector('#success-color-input').value = defaultTheme.colors.success
-document.querySelector('#danger-color-input').value = defaultTheme.colors.danger
-document.querySelector('#warning-color-input').value = defaultTheme.colors.warning
+document.querySelector("#primary-color-input").value =
+  defaultTheme.colors.primary;
+document.querySelector("#secondary-color-input").value =
+  defaultTheme.colors.secondary;
+document.querySelector("#success-color-input").value =
+  defaultTheme.colors.success;
+document.querySelector("#danger-color-input").value =
+  defaultTheme.colors.danger;
+document.querySelector("#warning-color-input").value =
+  defaultTheme.colors.warning;
 
-const newThemeFormButton = document.querySelector('#new-theme-form-button')
-newThemeFormButton.style.backgroundColor = defaultTheme.colors.primary
+const newThemeFormButton = document.querySelector("#new-theme-form-button");
+newThemeFormButton.style.backgroundColor = defaultTheme.colors.primary;
 
-function renderThemeButton(colors) {
+function setCurrentTheme(theme = defaultTheme) {
+  console.log(theme.name);
+}
+
+function renderThemeButton(theme) {
   const button = document.createElement("button");
-  button.style.backgroundColor = colors.primary;
+  button.style.backgroundColor = theme.colors.primary;
+  button.style.display = "block";
+  button.style.marginTop = "1rem";
   button.textContent = "Selecionar tema";
-  button.addEventListener("click", () => console.log(colors.primary));
+  button.addEventListener("click", () => setCurrentTheme(theme));
 
   return button;
 }
@@ -28,23 +41,33 @@ function renderThemeButton(colors) {
 function renderThemeItem(theme) {
   const themeWrapper = document.createElement("li");
 
-  
   themeWrapper.style.border = `2px solid ${theme.colors.primary}`;
   themeWrapper.style.padding = "1.5rem";
 
   if (theme.id === defaultTheme.id) {
-    themeWrapper.style.opacity = 0.5
-    themeWrapper.style.pointerEvents = 'none'
-    themeWrapper.style.userSelect = 'none'
-  } 
+    themeWrapper.style.opacity = 0.5;
+    themeWrapper.style.pointerEvents = "none";
+    themeWrapper.style.userSelect = "none";
+  }
 
   const title = document.createElement("h3");
   title.style.marginBottom = "1rem";
   title.textContent = theme.name;
 
-  const button = renderThemeButton(theme.colors);
-
   themeWrapper.appendChild(title);
+
+  const colorKeys = Object.keys(theme.colors);
+
+  console.log(colorKeys);
+
+  colorKeys.forEach((colorKey) => {
+    const colorSquare = document.createElement("span");
+    colorSquare.classList.add("colorSquare");
+    colorSquare.style.backgroundColor = theme.colors[colorKey];
+    themeWrapper.appendChild(colorSquare);
+  });
+
+  const button = renderThemeButton(theme);
   themeWrapper.appendChild(button);
 
   return themeWrapper;
@@ -65,11 +88,11 @@ function addNewTheme(event) {
   event.preventDefault();
 
   const themeName = document.querySelector("#theme-name-input").value;
-  const primaryColor = document.getElementById('primary-color-input').value;
-  const secondaryColor = document.getElementById('secondary-color-input').value;
-  const successColor = document.getElementById('success-color-input').value;
-  const dangerColor = document.getElementById('danger-color-input').value;
-  const warningColor = document.getElementById('warning-color-input').value;
+  const primaryColor = document.getElementById("primary-color-input").value;
+  const secondaryColor = document.getElementById("secondary-color-input").value;
+  const successColor = document.getElementById("success-color-input").value;
+  const dangerColor = document.getElementById("danger-color-input").value;
+  const warningColor = document.getElementById("warning-color-input").value;
 
   const newTheme = {
     id: themes.length + 1,
@@ -81,16 +104,21 @@ function addNewTheme(event) {
       danger: dangerColor,
       warning: warningColor,
     },
-  }
+  };
 
   themes.push(newTheme);
 
-  document.querySelector("#theme-name-input").value = ''
-  document.getElementById('primary-color-input').value = defaultTheme.colors.primary
-  document.getElementById('secondary-color-input').value = defaultTheme.colors.secondary
-  document.getElementById('success-color-input').value = defaultTheme.colors.success
-  document.getElementById('danger-color-input').value = defaultTheme.colors.danger
-  document.getElementById('warning-color-input').value = defaultTheme.colors.warning
+  document.querySelector("#theme-name-input").value = "";
+  document.getElementById("primary-color-input").value =
+    defaultTheme.colors.primary;
+  document.getElementById("secondary-color-input").value =
+    defaultTheme.colors.secondary;
+  document.getElementById("success-color-input").value =
+    defaultTheme.colors.success;
+  document.getElementById("danger-color-input").value =
+    defaultTheme.colors.danger;
+  document.getElementById("warning-color-input").value =
+    defaultTheme.colors.warning;
 
   renderThemeList();
   console.log(themes);
