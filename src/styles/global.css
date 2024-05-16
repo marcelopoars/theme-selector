@@ -6,14 +6,17 @@
 
 html,
 body,
+input,
 button {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   color: #222222;
 }
 
-body {
-  padding: 3rem 2rem;
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 li {
@@ -22,7 +25,7 @@ li {
 
 button {
   appearance: none;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
   color: white;
@@ -43,6 +46,8 @@ button:active {
 
 header {
   margin-bottom: 3rem;
+  padding: 1rem 0;
+  color: white;
 }
 
 h2 {
@@ -77,18 +82,33 @@ h2 {
 
 #new-theme-form .form-control.color {
   display: flex;
+  align-items: center;
+}
+
+#new-theme-form .form-control.color input,
+#new-theme-form label {
+  border: none;
+  cursor: pointer;
+  
+}
+
+#new-theme-form .form-control.color input {
+  height: 2.5rem;
+  transition: opacity 0.2s;
+}
+
+#new-theme-form .form-control.color input:hover {
+  opacity: 0.9;
 }
 
 #new-theme-form label {
   display: inline-block;
-
-  width: 8rem;
   flex: 1;
 }
 
 #new-theme-form #theme-name-input {
   margin-top: 0.5rem;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.5rem;
 }
 

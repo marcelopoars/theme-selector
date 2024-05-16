@@ -12,6 +12,9 @@ const defaultTheme =  {
   },
 }
 
+const headerPage = document.querySelector('#header-page')
+headerPage.style.backgroundColor = defaultTheme.colors.primary
+
 document.querySelector("#new-theme-form").addEventListener("submit", addNewTheme);
 
 document.querySelector('#primary-color-input').value = defaultTheme.colors.primary
