@@ -1,16 +1,6 @@
 import { themes } from "../mock/themes.js";
 
-const defaultTheme =  {
-  id: 1,
-  name: "Tema Azul",
-  colors: {
-    primary: "#007bff",
-    secondary: "#6c757d",
-    success: "#28a745",
-    danger: "#dc3545",
-    warning: "#ffc107",
-  },
-}
+const defaultTheme =  themes.find(theme => theme.id === 1)
 
 const headerPage = document.querySelector('#header-page')
 headerPage.style.backgroundColor = defaultTheme.colors.primary
@@ -37,8 +27,16 @@ function renderThemeButton(colors) {
 
 function renderThemeItem(theme) {
   const themeWrapper = document.createElement("li");
+
+  
   themeWrapper.style.border = `2px solid ${theme.colors.primary}`;
   themeWrapper.style.padding = "1.5rem";
+
+  if (theme.id === defaultTheme.id) {
+    themeWrapper.style.opacity = 0.5
+    themeWrapper.style.pointerEvents = 'none'
+    themeWrapper.style.userSelect = 'none'
+  } 
 
   const title = document.createElement("h3");
   title.style.marginBottom = "1rem";
