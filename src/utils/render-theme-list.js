@@ -1,6 +1,10 @@
 import { themes } from "../mock/themes.js";
 
-const defaultTheme = themes.find((theme) => theme.id === 1);
+let currentTheme = getThemeById(1);
+
+function getThemeById(id) {
+  return themes.find((theme) => theme.id === id);
+}
 
 let userThemes = loadUserThemesFromLocalStorage() || themes;
 
@@ -14,32 +18,44 @@ function loadUserThemesFromLocalStorage() {
 }
 
 const headerPage = document.querySelector("#header-page");
-headerPage.style.backgroundColor = defaultTheme.colors.primary;
+const themeNameInput = document.querySelector("#theme-name-input");
+
+const newThemeFormButton = document.querySelector("#new-theme-form-button");
+
+function setCurrentThemeStyles(theme) {
+  headerPage.style.backgroundColor = theme.colors.primary;
+  themeNameInput.style.border = `2px solid ${theme.colors.primary}`;
+  newThemeFormButton.style.backgroundColor = theme.colors.primary;
+}
+
+setCurrentThemeStyles(currentTheme);
 
 document
   .querySelector("#new-theme-form")
   .addEventListener("submit", addNewTheme);
 
 document.querySelector("#primary-color-input").value =
-  defaultTheme.colors.primary;
+  currentTheme.colors.primary;
 document.querySelector("#secondary-color-input").value =
-  defaultTheme.colors.secondary;
+  currentTheme.colors.secondary;
 document.querySelector("#success-color-input").value =
-  defaultTheme.colors.success;
+  currentTheme.colors.success;
 document.querySelector("#danger-color-input").value =
-  defaultTheme.colors.danger;
+  currentTheme.colors.danger;
 document.querySelector("#warning-color-input").value =
-  defaultTheme.colors.warning;
+  currentTheme.colors.warning;
 
-const newThemeFormButton = document.querySelector("#new-theme-form-button");
-newThemeFormButton.style.backgroundColor = defaultTheme.colors.primary;
+function setCurrentTheme(theme) {
+  currentTheme = getThemeById(theme.id);
 
-function setCurrentTheme(theme = defaultTheme) {
-  console.log(theme.name);
+  console.log("currentTheme", currentTheme);
+
+  setCurrentThemeStyles(theme);
+  renderThemeList()
 }
 
 function deleteTheme(id) {
-  userThemes = userThemes.filter(theme => theme.id !== id)
+  userThemes = userThemes.filter((theme) => theme.id !== id);
   saveUserThemesToLocalStorage();
   renderThemeList();
 }
@@ -72,7 +88,7 @@ function renderThemeItem(theme) {
   themeWrapper.style.border = `2px solid ${theme.colors.primary}`;
   themeWrapper.style.padding = "1.5rem";
 
-  if (theme.id === defaultTheme.id) {
+  if (theme.id === currentTheme.id) {
     themeWrapper.style.opacity = 0.5;
     themeWrapper.style.pointerEvents = "none";
     themeWrapper.style.userSelect = "none";
@@ -85,8 +101,6 @@ function renderThemeItem(theme) {
   themeWrapper.appendChild(title);
 
   const colorKeys = Object.keys(theme.colors);
-
-  console.log(colorKeys);
 
   colorKeys.forEach((colorKey) => {
     const colorSquare = document.createElement("span");
@@ -126,7 +140,7 @@ function addNewTheme(event) {
   const warningColor = document.getElementById("warning-color-input").value;
 
   const newTheme = {
-    id: userThemes.length + 1,
+    id: new Date().toISOString(),
     name: themeName,
     colors: {
       primary: primaryColor,
@@ -141,18 +155,16 @@ function addNewTheme(event) {
 
   document.querySelector("#theme-name-input").value = "";
   document.getElementById("primary-color-input").value =
-    defaultTheme.colors.primary;
+    currentTheme.colors.primary;
   document.getElementById("secondary-color-input").value =
-    defaultTheme.colors.secondary;
+    currentTheme.colors.secondary;
   document.getElementById("success-color-input").value =
-    defaultTheme.colors.success;
+    currentTheme.colors.success;
   document.getElementById("danger-color-input").value =
-    defaultTheme.colors.danger;
+    currentTheme.colors.danger;
   document.getElementById("warning-color-input").value =
-    defaultTheme.colors.warning;
+    currentTheme.colors.warning;
 
   renderThemeList();
   saveUserThemesToLocalStorage();
-
-  console.log(userThemes);
 }
