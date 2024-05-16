@@ -12,7 +12,7 @@ Aplicação web criada com:
 - [x] Deve exibir uma lista com todos os temas do JSON de mock fornecido
 - [x] Cada tema deve ter uma visualização em miniatura
 - [x] Qualquer tema que não esteja aplicado no momento pode ser removido
-- [ ] Ao clicar em um tema, ele deve ser aplicado
+- [x] Ao clicar em um tema, ele deve ser aplicado
 - [ ] Deve ser possível editar temas existentes
 - [ ] Deve haver um campo de filtro para pesquisar temas por nome
 - [x] Deve haver um botão para criar um novo tema, direcionando para a página de

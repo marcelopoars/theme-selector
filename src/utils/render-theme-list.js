@@ -1,12 +1,18 @@
 import { themes } from "../mock/themes.js";
 
-let currentTheme = getThemeById(1);
-
-function getThemeById(id) {
-  return themes.find((theme) => theme.id === id);
-}
-
 let userThemes = loadUserThemesFromLocalStorage() || themes;
+
+let currentTheme = userThemes[0] || {
+  id: 1,
+  name: "Tema Azul",
+  colors: {
+    primary: "#007bff",
+    secondary: "#6c757d",
+    success: "#28a745",
+    danger: "#dc3545",
+    warning: "#ffc107",
+  },
+};
 
 function saveUserThemesToLocalStorage() {
   localStorage.setItem("themes", JSON.stringify(userThemes));
@@ -22,13 +28,13 @@ const themeNameInput = document.querySelector("#theme-name-input");
 
 const newThemeFormButton = document.querySelector("#new-theme-form-button");
 
-function setCurrentThemeStyles(theme) {
-  headerPage.style.backgroundColor = theme.colors.primary;
-  themeNameInput.style.border = `2px solid ${theme.colors.primary}`;
-  newThemeFormButton.style.backgroundColor = theme.colors.primary;
+function setCurrentThemeStyles() {
+  headerPage.style.backgroundColor = currentTheme.colors.primary;
+  themeNameInput.style.border = `2px solid ${currentTheme.colors.primary}`;
+  newThemeFormButton.style.backgroundColor = currentTheme.colors.primary;
 }
 
-setCurrentThemeStyles(currentTheme);
+setCurrentThemeStyles();
 
 document
   .querySelector("#new-theme-form")
@@ -46,12 +52,7 @@ document.querySelector("#warning-color-input").value =
   currentTheme.colors.warning;
 
 function setCurrentTheme(theme) {
-  currentTheme = getThemeById(theme.id);
-
-  console.log("currentTheme", currentTheme);
-
-  setCurrentThemeStyles(theme);
-  renderThemeList()
+  console.log("theme id: ", theme.id);
 }
 
 function deleteTheme(id) {
