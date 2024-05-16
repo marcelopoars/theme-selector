@@ -2,7 +2,7 @@ import { themes } from "../mock/themes.js";
 
 const defaultTheme = themes.find((theme) => theme.id === 1);
 
-const userThemes = loadUserThemesFromLocalStorage() || themes;
+let userThemes = loadUserThemesFromLocalStorage() || themes;
 
 function saveUserThemesToLocalStorage() {
   localStorage.setItem("themes", JSON.stringify(userThemes));
@@ -38,13 +38,30 @@ function setCurrentTheme(theme = defaultTheme) {
   console.log(theme.name);
 }
 
-function renderThemeButton(theme) {
+function deleteTheme(id) {
+  userThemes = userThemes.filter(theme => theme.id !== id)
+  saveUserThemesToLocalStorage();
+  renderThemeList();
+}
+
+function renderSelectThemeButton(theme) {
   const button = document.createElement("button");
   button.style.backgroundColor = theme.colors.primary;
   button.style.display = "block";
   button.style.marginTop = "1rem";
   button.textContent = "Selecionar tema";
   button.addEventListener("click", () => setCurrentTheme(theme));
+
+  return button;
+}
+
+function renderdeleteThemeButton(theme) {
+  const button = document.createElement("button");
+  button.style.backgroundColor = theme.colors.danger;
+  button.style.display = "block";
+  button.style.marginTop = "1rem";
+  button.textContent = "Deletar tema";
+  button.addEventListener("click", () => deleteTheme(theme.id));
 
   return button;
 }
@@ -78,8 +95,11 @@ function renderThemeItem(theme) {
     themeWrapper.appendChild(colorSquare);
   });
 
-  const button = renderThemeButton(theme);
-  themeWrapper.appendChild(button);
+  const selectThemeButton = renderSelectThemeButton(theme);
+  themeWrapper.appendChild(selectThemeButton);
+
+  const deleteThemeButton = renderdeleteThemeButton(theme);
+  themeWrapper.appendChild(deleteThemeButton);
 
   return themeWrapper;
 }
@@ -106,7 +126,7 @@ function addNewTheme(event) {
   const warningColor = document.getElementById("warning-color-input").value;
 
   const newTheme = {
-    id: themes.length + 1,
+    id: userThemes.length + 1,
     name: themeName,
     colors: {
       primary: primaryColor,
