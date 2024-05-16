@@ -11,7 +11,7 @@ Aplicação web criada com:
 - [x] Utilize JS Vanilla e CSS nativo para a estrutura HTML responsiva
 - [x] Deve exibir uma lista com todos os temas do JSON de mock fornecido
 - [x] Cada tema deve ter uma visualização em miniatura
-- [ ] Qualquer tema que não esteja aplicado no momento pode ser removido
+- [x] Qualquer tema que não esteja aplicado no momento pode ser removido
 - [ ] Ao clicar em um tema, ele deve ser aplicado
 - [ ] Deve ser possível editar temas existentes
 - [ ] Deve haver um campo de filtro para pesquisar temas por nome
