@@ -13,4 +13,3 @@ Aplicação web criada com:
 - [ ] Cada tema deve ter uma visualização em miniatura
 - [ ] Qualquer tema que não esteja aplicado no momento pode ser removido
 - [ ] Ao clicar em um tema, ele deve ser aplicado
--

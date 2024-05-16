@@ -13,6 +13,42 @@
     </header>
 
     <main>
+      <h2>Criar novo tema</h2>
+
+      <form id="new-theme-form">
+        <div class="form-control">
+          <label for="theme-name-input">Nome do tema:</label>
+          <input type="text" id="theme-name-input" required>
+        </div>
+
+        <div class="form-control color">
+          <label for="primary-color-input">Primary</label>
+          <input type="color" id="primary-color-input">
+        </div>
+
+        <div class="form-control color">
+          <label for="secondary-color-input">Secondary</label>
+          <input type="color" id="secondary-color-input">
+        </div>
+
+        <div class="form-control color">
+          <label for="success-color-input">Success</label>
+          <input type="color" id="success-color-input">
+        </div>
+
+        <div class="form-control color">
+          <label for="danger-color-input">Danger</label>
+          <input type="color" id="danger-color-input">
+        </div>
+
+        <div class="form-control color">
+          <label for="warning-color-input">Warning</label>
+          <input type="color" id="warning-color-input">
+        </div>
+
+        <button type="submit" id="new-theme-form-button">Adicionar</button>
+      </form>
+
       <h2>Lista de temas</h2>
 
       <ul id="theme-list"></ul>
