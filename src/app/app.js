@@ -21,22 +21,24 @@ setCurrentThemeStyles(currentTheme);
 export function addNewTheme(event) {
   event.preventDefault();
 
-  const themeName = document.querySelector("#theme-name-input").value;
-  const primaryColor = document.querySelector("#primary-color-input").value;
-  const secondaryColor = document.querySelector("#secondary-color-input").value;
-  const successColor = document.querySelector("#success-color-input").value;
-  const dangerColor = document.querySelector("#danger-color-input").value;
-  const warningColor = document.querySelector("#warning-color-input").value;
+  const [
+    themeName,
+    primaryColor,
+    secondaryColor,
+    successColor,
+    dangerColor,
+    warningColor,
+  ] = document.getElementsByTagName("input");
 
   const newTheme = {
     id: new Date().toISOString(),
-    name: themeName,
+    name: themeName.value,
     colors: {
-      primary: primaryColor,
-      secondary: secondaryColor,
-      success: successColor,
-      danger: dangerColor,
-      warning: warningColor,
+      primary: primaryColor.value,
+      secondary: secondaryColor.value,
+      success: successColor.value,
+      danger: dangerColor.value,
+      warning: warningColor.value,
     },
   };
 
