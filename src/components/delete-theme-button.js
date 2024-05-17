@@ -6,6 +6,7 @@ export function renderDeleteThemeButton(theme) {
   button.style.display = "block";
   button.style.marginTop = "1rem";
   button.textContent = "Deletar tema";
+  
   button.addEventListener("click", () => deleteTheme(theme.id));
 
   return button;

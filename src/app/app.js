@@ -18,6 +18,15 @@ let currentTheme = userThemes[0] || themes[0];
 
 setCurrentThemeStyles(currentTheme);
 
+export function setCurrentTheme(theme) {
+  currentTheme = theme;
+
+  setCurrentThemeStyles(currentTheme);
+  renderThemeList();
+}
+
+document.querySelector("#new-theme-form").addEventListener("submit", addNewTheme);
+
 export function addNewTheme(event) {
   event.preventDefault();
 
@@ -47,14 +56,6 @@ export function addNewTheme(event) {
   resetForm(currentTheme);
   renderThemeList();
   saveUserThemesToLocalStorage();
-}
-
-export function setCurrentTheme(theme) {
-  console.log("theme id: ", theme.id);
-  currentTheme = theme;
-
-  setCurrentThemeStyles(currentTheme);
-  renderThemeList();
 }
 
 export function deleteTheme(id) {

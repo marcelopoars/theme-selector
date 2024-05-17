@@ -6,7 +6,12 @@ export function renderSelectThemeButton(theme) {
   button.style.display = "block";
   button.style.marginTop = "1rem";
   button.textContent = "Selecionar tema";
-  button.addEventListener("click", () => setCurrentTheme(theme));
+  
+  button.addEventListener("click", () => {
+    document.querySelector("#theme-name-input").value = "";
+    document.querySelector('#new-theme-form-button').textContent = "Adicionar"
+    setCurrentTheme(theme)
+  });
 
   return button;
 }

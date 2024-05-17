@@ -1,4 +1,5 @@
 import { renderDeleteThemeButton } from "./delete-theme-button.js";
+import { renderEditThemeButton } from "./edit-theme-button.js";
 import { renderSelectThemeButton } from "./select-theme-button.js";
 
 
@@ -32,8 +33,13 @@ export function renderThemeItem(theme, currentTheme) {
   const selectThemeButton = renderSelectThemeButton(theme);
   themeWrapper.appendChild(selectThemeButton);
 
+  const editThemeButton = renderEditThemeButton(theme);
+  themeWrapper.appendChild(editThemeButton);
+
   const deleteThemeButton = renderDeleteThemeButton(theme);
   themeWrapper.appendChild(deleteThemeButton);
+
+
 
   return themeWrapper;
 }
