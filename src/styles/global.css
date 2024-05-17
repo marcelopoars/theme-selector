@@ -23,6 +23,7 @@ button {
 }
 
 .form-container {
+  min-width: 300px;
   border-right: solid 1px #cbcbcb;
   padding-right: 2rem;
 }
