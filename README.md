@@ -15,7 +15,7 @@ Aplicação web criada com:
 - [x] Ao clicar em um tema, ele deve ser aplicado
 - [ ] Deve ser possível editar temas existentes
 - [ ] Deve haver um campo de filtro para pesquisar temas por nome
-- [x] Deve haver um botão para criar um novo tema, direcionando para a página de
+- [ ] Deve haver um botão para criar um novo tema, direcionando para a página de
       edição/adicionar
 - [x] Garanta a responsividade da aplicação em dispositivos desde mobile (320px) até
       desktop (1920px), aderindo às melhores práticas de usabilidade;

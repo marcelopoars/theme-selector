@@ -17,13 +17,20 @@ button {
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 1.5rem;
+
+  display: flex;
+  gap: 3rem;
+}
+
+.list-container {
+  flex: 1;
 }
 
 li {
   list-style: none;
 }
 
-button {
+button, .add-new-theme-link {
   appearance: none;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -50,14 +57,19 @@ header {
   color: white;
 }
 
+header .add-new-theme-link {
+  color: white;
+  text-decoration: none;
+}
+
 h2 {
   margin-bottom: 1rem;
 }
 
 #theme-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
 }
 
 #theme-list > li {
