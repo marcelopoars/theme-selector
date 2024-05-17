@@ -16,10 +16,15 @@ button {
 .container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 3rem;
 
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
+}
+
+.form-container {
+  border-right: solid 1px #cbcbcb;
+  padding-right: 2rem;
 }
 
 .list-container {
@@ -79,9 +84,6 @@ h2 {
 }
 
 #new-theme-form {
-  max-width: 12rem;
-  margin-bottom: 3rem;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -115,6 +117,8 @@ h2 {
 #new-theme-form label {
   display: inline-block;
   flex: 1;
+
+  font-size: 1.25rem;
 }
 
 #new-theme-form #theme-name-input {
