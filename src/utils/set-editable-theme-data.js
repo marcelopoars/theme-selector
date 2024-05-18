@@ -1,3 +1,5 @@
+let selectedThemeForUpdate = null;
+
 export function setEditableThemeData(theme) {
   document.querySelector("#theme-name-input").value = theme.name;
   document.getElementById("primary-color-input").value = theme.colors.primary;
@@ -6,4 +8,10 @@ export function setEditableThemeData(theme) {
   document.getElementById("success-color-input").value = theme.colors.success;
   document.getElementById("danger-color-input").value = theme.colors.danger;
   document.getElementById("warning-color-input").value = theme.colors.warning;
+
+  selectedThemeForUpdate = theme.id;
+}
+
+export function getSelectedThemeForUpdate() {
+  return selectedThemeForUpdate;
 }

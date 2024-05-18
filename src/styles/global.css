@@ -50,11 +50,16 @@ button, .add-new-theme-link {
 }
 
 button:hover {
-  opacity: 0.95;
+  opacity: 0.85;
 }
 
 button:active {
   opacity: 1;
+}
+
+#reset-form-button {
+  width: 100%;
+  color: #717171;
 }
 
 header {

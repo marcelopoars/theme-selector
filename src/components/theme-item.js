@@ -1,12 +1,17 @@
-import { renderDeleteThemeButton } from "./delete-theme-button.js";
-import { renderEditThemeButton } from "./edit-theme-button.js";
-import { renderSelectThemeButton } from "./select-theme-button.js";
+import { getCurrentTheme } from "../app/app.js";
+import {
+  renderDeleteThemeButton,
+  renderEditThemeButton,
+  renderSelectThemeButton,
+} from "./theme-buttons.js";
 
-export function renderThemeItem(theme, currentTheme) {
+export function renderThemeItem(theme) {
   const themeWrapper = document.createElement("li");
 
   themeWrapper.style.border = `2px solid ${theme.colors.primary}`;
   themeWrapper.style.padding = "1.5rem";
+
+  const currentTheme = getCurrentTheme();
 
   if (theme.id === currentTheme.id) {
     themeWrapper.style.opacity = 0.5;

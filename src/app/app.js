@@ -1,18 +1,21 @@
+import { resetForm } from "../components/theme-buttons.js";
 import { renderThemeItem } from "../components/theme-item.js";
-import { createNewTheme } from "../utils/create-new-theme.js";
 import { fetchThemes } from "../utils/fetch-themes.js";
 import { setCurrentThemeStyles } from "../utils/set-current-theme-styles.js";
+import { submitForm } from "../utils/submit-form.js";
 
 const themeListElement = document.querySelector("#theme-list");
+
 const newThemeForm = document.querySelector("#new-theme-form");
+newThemeForm.addEventListener("submit", submitForm);
 
-newThemeForm.addEventListener("submit", createNewTheme);
+const resetFormButton = document.querySelector("#reset-form-button");
+resetFormButton.addEventListener("click", () => resetForm(currentTheme));
 
-export function setCurrentTheme(theme) {
-  const currentTheme = theme;
+let currentTheme = null;
 
-  setCurrentThemeStyles(currentTheme);
-  renderThemeList(currentTheme);
+export function getCurrentTheme() {
+  return currentTheme;
 }
 
 export async function renderThemeList(theme) {
@@ -20,14 +23,14 @@ export async function renderThemeList(theme) {
 
   const themes = await fetchThemes();
 
-  const currentTheme = theme || themes[0];
+  currentTheme = theme || themes[0];
 
-  setCurrentThemeStyles(currentTheme);
-  
   themes.forEach((theme) => {
-    const themeItem = renderThemeItem(theme, currentTheme);
+    const themeItem = renderThemeItem(theme);
     themeListElement.appendChild(themeItem);
   });
+
+  setCurrentThemeStyles(currentTheme);
 }
 
 renderThemeList();

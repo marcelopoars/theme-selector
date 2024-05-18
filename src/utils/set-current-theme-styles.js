@@ -1,20 +1,20 @@
-export function setCurrentThemeStyles(selectedTheme) {
+export function setCurrentThemeStyles(currentTheme) {
   const headerPage = document.querySelector("#header-page");
   const themeNameInput = document.querySelector("#theme-name-input");
   const newThemeFormButton = document.querySelector("#new-theme-form-button");
 
-  headerPage.style.backgroundColor = selectedTheme.colors.primary;
-  themeNameInput.style.border = `2px solid ${selectedTheme.colors.primary}`;
-  newThemeFormButton.style.backgroundColor = selectedTheme.colors.primary;
+  headerPage.style.backgroundColor = currentTheme.colors.primary;
+  themeNameInput.style.border = `2px solid ${currentTheme.colors.primary}`;
+  newThemeFormButton.style.backgroundColor = currentTheme.colors.primary;
 
   document.querySelector("#primary-color-input").value =
-    selectedTheme.colors.primary;
+    currentTheme.colors.primary;
   document.querySelector("#secondary-color-input").value =
-    selectedTheme.colors.secondary;
+    currentTheme.colors.secondary;
   document.querySelector("#success-color-input").value =
-    selectedTheme.colors.success;
+    currentTheme.colors.success;
   document.querySelector("#danger-color-input").value =
-    selectedTheme.colors.danger;
+    currentTheme.colors.danger;
   document.querySelector("#warning-color-input").value =
-    selectedTheme.colors.warning;
+    currentTheme.colors.warning;
 }

@@ -1,25 +1,36 @@
 {
   "themes": [
     {
-      "id": "2024-05-18T13:10:45.881Z",
-      "name": "Tema Roxo",
+      "id": "2024-05-18T21:15:03.302Z",
+      "name": "Tema Pink",
       "colors": {
-        "primary": "#3e29a8",
+        "primary": "#ee58b7",
         "secondary": "#6c757d",
-        "success": "#218838",
+        "success": "#8be49f",
         "danger": "#c82333",
         "warning": "#ffc107"
       }
     },
     {
-      "id": "2024-05-18T13:28:43.878Z",
-      "name": "Tema Vermelho",
+      "id": "2024-05-18T21:21:36.306Z",
+      "name": "Tema Laranja",
       "colors": {
-        "primary": "#f71d1d",
-        "secondary": "#b9d5ef",
-        "success": "#044813",
-        "danger": "#c82333",
-        "warning": "#9c802b"
+        "primary": "#f98f15",
+        "secondary": "#6c757d",
+        "success": "#8be49f",
+        "danger": "#6d030d",
+        "warning": "#f0d68a"
+      }
+    },
+    {
+      "id": "2024-05-18T21:22:51.570Z",
+      "name": "Tema Roxo",
+      "colors": {
+        "primary": "#3015f9",
+        "secondary": "#6c757d",
+        "success": "#8be49f",
+        "danger": "#ad92ce",
+        "warning": "#f0d68a"
       }
     }
   ]

@@ -1,4 +1,4 @@
-export async function createNewTheme() {
+export async function updateTheme(id) {
   const [
     themeName,
     primaryColor,
@@ -8,8 +8,8 @@ export async function createNewTheme() {
     warningColor,
   ] = document.getElementsByTagName("input");
 
-  const newTheme = {
-    id: new Date().toISOString(),
+  const editedTheme = {
+    id,
     name: themeName.value,
     colors: {
       primary: primaryColor.value,
@@ -21,20 +21,20 @@ export async function createNewTheme() {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/themes", {
-      method: "POST",
+    const response = await fetch(`http://localhost:3000/themes/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newTheme),
+      body: JSON.stringify(editedTheme),
     });
 
     if (!response.ok) {
       throw new Error(
-        "Erro ao adicionar tema. Código de status: " + response.status
+        "Erro ao atualizar tema. Código de status: " + response.status
       );
     }
   } catch (error) {
-    console.error("Erro ao adicionar tema:", error);
+    console.error("Erro ao atualizar tema:", error);
   }
 }

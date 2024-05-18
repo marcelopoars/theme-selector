@@ -10,7 +10,7 @@ export async function fetchThemes() {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("XXXX Erro ao buscar os temas:", error.message);
+    console.error("Erro ao buscar os temas:", error.message);
     return null;
   }
 }
