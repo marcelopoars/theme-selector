@@ -2,7 +2,6 @@ import { renderDeleteThemeButton } from "./delete-theme-button.js";
 import { renderEditThemeButton } from "./edit-theme-button.js";
 import { renderSelectThemeButton } from "./select-theme-button.js";
 
-
 export function renderThemeItem(theme, currentTheme) {
   const themeWrapper = document.createElement("li");
 
@@ -38,8 +37,6 @@ export function renderThemeItem(theme, currentTheme) {
 
   const deleteThemeButton = renderDeleteThemeButton(theme);
   themeWrapper.appendChild(deleteThemeButton);
-
-
 
   return themeWrapper;
 }

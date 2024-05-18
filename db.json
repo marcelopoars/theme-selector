@@ -1,0 +1,26 @@
+{
+  "themes": [
+    {
+      "id": "2024-05-18T13:10:45.881Z",
+      "name": "Tema Roxo",
+      "colors": {
+        "primary": "#3e29a8",
+        "secondary": "#6c757d",
+        "success": "#218838",
+        "danger": "#c82333",
+        "warning": "#ffc107"
+      }
+    },
+    {
+      "id": "2024-05-18T13:28:43.878Z",
+      "name": "Tema Vermelho",
+      "colors": {
+        "primary": "#f71d1d",
+        "secondary": "#b9d5ef",
+        "success": "#044813",
+        "danger": "#c82333",
+        "warning": "#9c802b"
+      }
+    }
+  ]
+}
