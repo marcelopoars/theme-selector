@@ -17,6 +17,8 @@ export function setCurrentThemeStyles(currentTheme) {
 
   const filterThemeInput = document.querySelector("#filter-theme-input");
   const filterThemesButton = document.querySelector("#filter-themes-button");
+  
+  const footer = document.querySelector("#footer");
 
   headerPage.style.backgroundColor = colors.primary;
 
@@ -26,6 +28,8 @@ export function setCurrentThemeStyles(currentTheme) {
   filterThemeInput.style.border = `2px solid ${colors.primary}`;
   filterThemesButton.style.backgroundColor = colors.primary;
   filterThemesButton.style.fontSize = "1.125rem";
+
+  footer.style.backgroundColor = colors.primary;
 
   const primaryColorIputn = document.querySelector("#primary-color-input");
   primaryColorIputn.value = colors.primary;

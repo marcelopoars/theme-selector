@@ -28,6 +28,26 @@ li {
   list-style: none;
 }
 
+a {
+  padding: 2px;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+body {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 .container {
   max-width: 1920px;
   margin: 0 auto;
@@ -196,7 +216,6 @@ header #social-lins ul {
 
 #theme-list {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
   gap: 2rem;
 }
 
@@ -229,4 +248,15 @@ header #social-lins ul {
 
 #theme-list > li .colorSquare + .colorSquare {
   margin-left: 1rem;
+}
+
+footer .footer-container {
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
+}
+
+footer .footer-container a {
+  font-weight: 700;
+  text-underline-offset: 4px;
 }
