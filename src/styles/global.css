@@ -8,18 +8,16 @@ html,
 body,
 input,
 button {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Nunito", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   color: #222222;
 }
 
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 3rem;
-
-  display: flex;
-  gap: 2rem;
+h1,
+h2,
+h3,
+button {
+  font-weight: 700;
 }
 
 h2 {
@@ -28,6 +26,24 @@ h2 {
 
 li {
   list-style: none;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 3rem;
+  }
 }
 
 /* BUTTONS */
@@ -61,16 +77,43 @@ header {
   color: white;
 }
 
+header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 header .add-new-theme-link {
   color: white;
   text-decoration: none;
 }
 
+header #social-lins ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* THEMES CONTAINER */
+.themes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .themes-container {
+    flex-direction: row;
+  }
+}
+
 /* NEW THEME FORM */
-.form-container {
-  min-width: 300px;
-  border-right: solid 1px #cbcbcb;
-  padding-right: 2rem;
+@media screen and (min-width: 1024px) {
+  .form-container {
+    min-width: 220px;
+    padding-right: 2rem;
+    border-right: solid 1px #cbcbcb;
+  }
 }
 
 #new-theme-form {
@@ -153,8 +196,22 @@ header .add-new-theme-link {
 
 #theme-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  #theme-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #theme-list {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
 }
 
 #theme-list > li {
