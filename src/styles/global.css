@@ -54,11 +54,6 @@ button:active {
   opacity: 1;
 }
 
-#reset-form-button {
-  width: 100%;
-  color: #717171;
-}
-
 /* HEADER */
 header {
   margin-bottom: 3rem;
@@ -81,37 +76,42 @@ header .add-new-theme-link {
 #new-theme-form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1rem;
 }
 
-#new-theme-form .form-control {
-  width: 100%;
+#new-theme-form label,
+#new-theme-form #theme-name-input {
+  font-size: 1.125rem;
 }
 
-#new-theme-form .form-control.color {
+#theme-name-input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+#new-theme-form #filter-theme-input {
+  display: block;
+  min-width: 100%;
+}
+
+#new-theme-form .form-control {
   display: flex;
   align-items: center;
 }
 
-#new-theme-form .form-control.color input,
+#new-theme-form .form-control input,
 #new-theme-form label {
   border: none;
   cursor: pointer;
 }
 
-#new-theme-form .form-control.color input {
+#new-theme-form .form-control input {
   height: 2.5rem;
   transition: opacity 0.2s;
 }
 
-#new-theme-form .form-control.color input:hover {
+#new-theme-form .form-control input:hover {
   opacity: 0.9;
-}
-
-#new-theme-form label,
-#theme-name-input {
-  font-size: 1.25rem;
 }
 
 #new-theme-form label {
@@ -119,18 +119,31 @@ header .add-new-theme-link {
   flex: 1;
 }
 
-#new-theme-form #theme-name-input {
+#new-theme-form #new-theme-form-button,
+#new-theme-form #reset-form-button {
+  width: 100%;
+}
+
+#reset-form-button {
+  color: #717171;
+}
+
+/* FILTER THEMES */
+#filter-themes-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#filter-theme-input {
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
+  font-size: 1.125rem;
+  flex: 1;
 }
 
-#new-theme-form #theme-name-input {
-  display: block;
-  width: 100%;
-}
-
-#new-theme-form #new-theme-form-button {
-  width: 100%;
+#reset-filter-form-button {
+  color: #717171;
 }
 
 /* THEME LIST */

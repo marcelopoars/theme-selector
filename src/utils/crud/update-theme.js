@@ -1,4 +1,6 @@
 export async function updateTheme(id) {
+  const url = "http://localhost:3000/themes";
+
   const [
     themeName,
     primaryColor,
@@ -21,7 +23,7 @@ export async function updateTheme(id) {
   };
 
   try {
-    const response = await fetch(`http://localhost:3000/themes/${id}`, {
+    const response = await fetch(`${url}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

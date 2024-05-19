@@ -1,4 +1,6 @@
 export async function createNewTheme() {
+  const url = "http://localhost:3000/themes";
+
   const [
     themeName,
     primaryColor,
@@ -21,7 +23,7 @@ export async function createNewTheme() {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/themes", {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,10 +1,10 @@
 {
   "themes": [
     {
-      "id": "2024-05-19T15:33:51.236Z",
-      "name": "Tema Azul Claro",
+      "id": "1",
+      "name": "Tema Azul",
       "colors": {
-        "primary": "#084a91",
+        "primary": "#007bff",
         "secondary": "#6c757d",
         "success": "#28a745",
         "danger": "#dc3545",
@@ -12,10 +12,21 @@
       }
     },
     {
-      "id": "2024-05-19T16:21:08.587Z",
+      "id": "2",
+      "name": "Tema Verde",
+      "colors": {
+        "primary": "#098b27",
+        "secondary": "#6c757d",
+        "success": "#218838",
+        "danger": "#c82333",
+        "warning": "#ffc107"
+      }
+    },
+    {
+      "id": "2024-05-19T21:48:50.273Z",
       "name": "Tema Roxo",
       "colors": {
-        "primary": "#7b62f9",
+        "primary": "#9430f8",
         "secondary": "#6c757d",
         "success": "#28a745",
         "danger": "#dc3545",

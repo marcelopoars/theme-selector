@@ -1,20 +1,44 @@
+const defaultTheme = {
+  colors: {
+    primary: "#007bff",
+    secondary: "#6c757d",
+    success: "#28a745",
+    danger: "#dc3545",
+    warning: "#ffc107",
+  },
+};
+
 export function setCurrentThemeStyles(currentTheme) {
+  const colors = currentTheme ? currentTheme.colors : defaultTheme.colors;
+
   const headerPage = document.querySelector("#header-page");
   const themeNameInput = document.querySelector("#theme-name-input");
   const newThemeFormButton = document.querySelector("#new-theme-form-button");
 
-  headerPage.style.backgroundColor = currentTheme.colors.primary;
-  themeNameInput.style.border = `2px solid ${currentTheme.colors.primary}`;
-  newThemeFormButton.style.backgroundColor = currentTheme.colors.primary;
+  const filterThemeInput = document.querySelector("#filter-theme-input");
+  const filterThemesButton = document.querySelector("#filter-themes-button");
 
-  document.querySelector("#primary-color-input").value =
-    currentTheme.colors.primary;
-  document.querySelector("#secondary-color-input").value =
-    currentTheme.colors.secondary;
-  document.querySelector("#success-color-input").value =
-    currentTheme.colors.success;
-  document.querySelector("#danger-color-input").value =
-    currentTheme.colors.danger;
-  document.querySelector("#warning-color-input").value =
-    currentTheme.colors.warning;
+  headerPage.style.backgroundColor = colors.primary;
+
+  themeNameInput.style.border = `2px solid ${colors.primary}`;
+  newThemeFormButton.style.backgroundColor = colors.primary;
+
+  filterThemeInput.style.border = `2px solid ${colors.primary}`;
+  filterThemesButton.style.backgroundColor = colors.primary;
+  filterThemesButton.style.fontSize = "1.125rem";
+
+  const primaryColorIputn = document.querySelector("#primary-color-input");
+  primaryColorIputn.value = colors.primary;
+
+  const secondaryColorIputn = document.querySelector("#secondary-color-input");
+  secondaryColorIputn.value = colors.secondary;
+
+  const successColorIputn = document.querySelector("#success-color-input");
+  successColorIputn.value = colors.success;
+
+  const dangerColorIputn = document.querySelector("#danger-color-input");
+  dangerColorIputn.value = colors.danger;
+
+  const warningColorIputn = document.querySelector("#warning-color-input");
+  warningColorIputn.value = colors.warning;
 }
