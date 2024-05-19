@@ -1,16 +1,38 @@
 {
-  "name": "theme-selector",
-  "description": "Aplicação web criada com:",
   "version": "1.0.0",
+  "name": "theme-selector",
+  "description": "Projeto de estudo de JavaScript",
+  "keywords": [
+    "frontend",
+    "javascript",
+    "css",
+    "html5",
+    "flexbox",
+    "async-await",
+    "fetch-api",
+    "json-server"
+  ],
   "main": "index.js",
-  "dependencies": {
-    "json-server": "^1.0.0-beta.0"
-  },
-  "devDependencies": {},
+  "license": "ISC",
   "scripts": {
     "dev:server": "npx json-server db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelopoars/theme-selector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcelopoars/theme-selector/issues"
+  },
+  "homepage": "https://github.com/marcelopoars/theme-selector#readme",
+  "author": {
+    "name": "Marcelo Pereira",
+    "email": "marcelo.fatecpoa@gmail.com",
+    "url": "https://www.marcelopereira.dev"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {}
 }
