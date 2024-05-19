@@ -22,3 +22,7 @@ Aplicação web criada com:
 - [x] Deve exibir uma visualização do tema sendo adicionado
 - [x] Deve ter seletores de cores para cada uma das cores do tema (de sua escolha)
 - [x] As cores selecionadas devem ser salvas no formato de cor hexadecimal
+
+## Instruções para executar a aplicação
+
+Utilize a versão estável do `JSON Server`: "v0.17.4"
