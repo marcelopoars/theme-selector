@@ -22,21 +22,18 @@ button {
   gap: 2rem;
 }
 
-.form-container {
-  min-width: 300px;
-  border-right: solid 1px #cbcbcb;
-  padding-right: 2rem;
-}
-
-.list-container {
-  flex: 1;
+h2 {
+  margin-bottom: 1rem;
 }
 
 li {
   list-style: none;
 }
 
-button, .add-new-theme-link {
+/* BUTTONS */
+button,
+.add-new-theme-link {
+  min-width: 120px;
   appearance: none;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -62,6 +59,7 @@ button:active {
   color: #717171;
 }
 
+/* HEADER */
 header {
   margin-bottom: 3rem;
   padding: 1rem 0;
@@ -73,20 +71,11 @@ header .add-new-theme-link {
   text-decoration: none;
 }
 
-h2 {
-  margin-bottom: 1rem;
-}
-
-#theme-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-}
-
-#theme-list > li {
-  flex: 1;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+/* NEW THEME FORM */
+.form-container {
+  min-width: 300px;
+  border-right: solid 1px #cbcbcb;
+  padding-right: 2rem;
 }
 
 #new-theme-form {
@@ -142,13 +131,30 @@ h2 {
   width: 100%;
 }
 
-.colorSquare {
+/* THEME LIST */
+.list-container {
+  flex: 1;
+}
+
+#theme-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+#theme-list > li {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+#theme-list > li .colorSquare {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 100%;
 }
 
-.colorSquare + .colorSquare {
+#theme-list > li .colorSquare + .colorSquare {
   margin-left: 1rem;
 }
