@@ -1,5 +1,5 @@
 import { getCurrentTheme, renderThemeList } from "../app/app.js";
-import { deleteTheme } from "../utils/delete-theme.js";
+import { deleteTheme } from "../utils/crud/delete-theme.js";
 import { setEditableThemeData } from "../utils/set-editable-theme-data.js";
 
 let submitType = "POST";
@@ -10,6 +10,8 @@ export function getSubmitType() {
 }
 
 export function renderSelectThemeButton(theme) {
+  const currentTheme = getCurrentTheme();
+
   const button = document.createElement("button");
   button.style.backgroundColor = theme.colors.primary;
   button.style.display = "block";
@@ -19,8 +21,6 @@ export function renderSelectThemeButton(theme) {
   button.addEventListener("click", () => {
     renderThemeList(theme);
 
-    const currentTheme = getCurrentTheme();
-
     resetForm(currentTheme);
   });
 
@@ -28,8 +28,10 @@ export function renderSelectThemeButton(theme) {
 }
 
 export function renderEditThemeButton(theme) {
+  const currentTheme = getCurrentTheme();
+
   const button = document.createElement("button");
-  button.style.backgroundColor = theme.colors.primary;
+  button.style.backgroundColor = currentTheme.colors.secondary;
   button.style.display = "block";
   button.style.marginTop = "1rem";
   button.textContent = "Editar";
@@ -46,16 +48,17 @@ export function renderEditThemeButton(theme) {
 }
 
 export function renderDeleteThemeButton(theme) {
+  const currentTheme = getCurrentTheme();
+
   const button = document.createElement("button");
-  button.style.backgroundColor = theme.colors.danger;
+  button.setAttribute("type", "button")
+  button.style.backgroundColor = currentTheme.colors.danger;
   button.style.display = "block";
   button.style.marginTop = "1rem";
   button.textContent = "Deletar";
 
   button.addEventListener("click", async () => {
     await deleteTheme(theme.id);
-
-    const currentTheme = getCurrentTheme();
 
     await renderThemeList(currentTheme);
 

@@ -23,7 +23,7 @@ button {
 }
 
 h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 li {
@@ -109,15 +109,17 @@ header .add-new-theme-link {
   opacity: 0.9;
 }
 
-#new-theme-form label {
-  display: inline-block;
-  flex: 1;
-
+#new-theme-form label,
+#theme-name-input {
   font-size: 1.25rem;
 }
 
+#new-theme-form label {
+  display: inline-block;
+  flex: 1;
+}
+
 #new-theme-form #theme-name-input {
-  margin-top: 0.5rem;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
 }

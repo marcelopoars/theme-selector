@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Theme Selector</title>
 
-    <link rel="stylesheet" href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
   </head>
   <body>
     <header id="header-page">
@@ -22,13 +22,8 @@
 
             <form id="new-theme-form">
               <div class="form-control">
-                <input
-                  type="text"
-                  id="theme-name-input"
-                  placeholder="Nome do tema"
-                  aria-placeholder="Nome do tema"
-                  required
-                />
+                <label for="theme-name-input">Nome do tema:</label>
+                <input type="text" id="theme-name-input" required />
               </div>
 
               <div class="form-control color">
@@ -81,6 +76,6 @@
       </section>
     </main>
 
-    <script type="module" src="./src/app/app.js"></script>
+    <script type="module" src="./app/app.js"></script>
   </body>
 </html>

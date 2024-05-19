@@ -6,9 +6,11 @@ import { submitForm } from "../utils/submit-form.js";
 
 const themeListElement = document.querySelector("#theme-list");
 
+// CREATE, UPDATE and DELETE theme
 const newThemeForm = document.querySelector("#new-theme-form");
 newThemeForm.addEventListener("submit", submitForm);
 
+// Reset form
 const resetFormButton = document.querySelector("#reset-form-button");
 resetFormButton.addEventListener("click", () => resetForm(currentTheme));
 
