@@ -1,43 +1,21 @@
 {
   "themes": [
     {
+      "id": "1",
+      "name": "Tema Azul",
+      "colors": {
+        "primary": "#007bff",
+        "secondary": "#6c757d",
+        "success": "#28a745",
+        "danger": "#dc3545",
+        "warning": "#ffc107"
+      }
+    },
+    {
       "id": "2",
-      "name": "Tema Verde",
+      "name": "Tema Verde 2",
       "colors": {
-        "primary": "#098b27",
-        "secondary": "#6c757d",
-        "success": "#218838",
-        "danger": "#c82333",
-        "warning": "#ffc107"
-      }
-    },
-    {
-      "id": "2024-05-19T21:48:50.273Z",
-      "name": "Tema Roxo",
-      "colors": {
-        "primary": "#4a078d",
-        "secondary": "#6c757d",
-        "success": "#28a745",
-        "danger": "#dc3545",
-        "warning": "#ffc107"
-      }
-    },
-    {
-      "id": "2024-05-19T23:29:20.885Z",
-      "name": "Tema Laranja",
-      "colors": {
-        "primary": "#fd9f1c",
-        "secondary": "#6c757d",
-        "success": "#28a745",
-        "danger": "#dc3545",
-        "warning": "#ffc107"
-      }
-    },
-    {
-      "id": "2024-05-19T23:30:01.013Z",
-      "name": "Tema Vermelho",
-      "colors": {
-        "primary": "#ed0202",
+        "primary": "#28a745",
         "secondary": "#6c757d",
         "success": "#218838",
         "danger": "#c82333",
