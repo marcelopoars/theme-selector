@@ -83,8 +83,6 @@ npm run dev:server
 - 🤖 Todos os temas cadastrados serão gravados no arquivo `db.json` na rais do diretório deste projeto.
 - 🤖 Deixei um backup de temas no arquivo `mock.json`. (Serve apenas como uma cópia para lembrar a estrutura padrão).
 
-- 🤖 Este é um exemplo de retorno da API de `themes`:
-
 <br>
 
 ## 📚 Endpoint `Themes`
