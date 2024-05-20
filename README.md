@@ -120,6 +120,10 @@ npm run dev:server
 
 ## 👨‍💻 Autor
 
+### Olá! Eu sou Marcelo Pereira. 👋
+
+Desenvolvedor Frontend apaixonado por criar interfaces web incríveis e acessíveis. Entusiasta de SEO, Acessibilidade e Inteligência Artificial. Minha missão é contribuir para uma web mais inclusiva e semântica, garantindo que todas as pessoas tenham acesso a uma experiência digital excepcional. 🤓🎉
+
 <p>
     <img 
       align="left" 
